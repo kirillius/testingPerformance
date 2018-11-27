@@ -1,0 +1,27 @@
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\bin\Debug\TestNetwork.exe.config
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\bin\Debug\TestNetwork.exe
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\bin\Debug\TestNetwork.pdb
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\obj\Debug\TestNetwork.csprojResolveAssemblyReference.cache
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\obj\Debug\TestNetwork.Form1.resources
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\obj\Debug\TestNetwork.Properties.Resources.resources
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\obj\Debug\TestNetwork.testForm.resources
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\obj\Debug\TestNetwork.csproj.GenerateResource.Cache
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\obj\Debug\TestNetwork.csproj.CoreCompileInputs.cache
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\obj\Debug\TestNetwork.exe
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\obj\Debug\TestNetwork.pdb
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1\Documents\Visual Studio 2017\Projects\TestNetwork\TestNetwork\bin\Debug\Newtonsoft.Json.xml
+C:\work\TestNetwork\TestNetwork\bin\Debug\TestNetwork.exe.config
+C:\work\TestNetwork\TestNetwork\bin\Debug\TestNetwork.exe
+C:\work\TestNetwork\TestNetwork\bin\Debug\TestNetwork.pdb
+C:\work\TestNetwork\TestNetwork\bin\Debug\Newtonsoft.Json.dll
+C:\work\TestNetwork\TestNetwork\bin\Debug\Newtonsoft.Json.xml
+C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.csprojResolveAssemblyReference.cache
+C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.Form1.resources
+C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.Properties.Resources.resources
+C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.testForm.resources
+C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.csproj.GenerateResource.Cache
+C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.csproj.CoreCompileInputs.cache
+C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.exe
+C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.pdb
+C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.TestConnectionForm.resources

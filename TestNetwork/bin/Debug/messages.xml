@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" login="user1" password="password_secret">
+  <send>
+    <message id="1" receiver="789" sender="jhg">text1</message>
+    <message id="2" receiver="564" sender="dfdf">text2</message>
+    <message id="3" receiver="514">text3</message>
+  </send>
+</package>

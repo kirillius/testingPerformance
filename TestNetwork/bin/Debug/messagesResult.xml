@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" login="user1" password="password_secret">
+  <send>
+    <message id="1" server_id="SERVER_ID1">text1</message>
+    <message id="2"><error>error text tut</error></message>
+    <message id="3" server_id="SERVER_ID2">text3</message>
+  </send>
+</package>
