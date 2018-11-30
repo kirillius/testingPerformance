@@ -47,7 +47,7 @@ namespace TestNetwork
             connectionString += ";Database=" + currentConfig.databaseName;
             connectionString += ";User Id=" + currentConfig.login;
             connectionString += ";Password=" + currentConfig.password;
-            connectionString += ";pooling=true";
+            connectionString += ";pooling=false";
 
             return connectionString;
         }

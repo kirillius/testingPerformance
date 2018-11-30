@@ -40,6 +40,7 @@ namespace TestNetwork
                     stopwatch.Stop();
                     resultObj.timeFactStart = DateTime.Now.TimeOfDay;
                     resultObj.countRowsResult = command.ExecuteNonQuery();
+                    resultObj.errorText = "";
                 }
                 catch (Exception exp)
                 {

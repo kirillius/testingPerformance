@@ -53,7 +53,7 @@ namespace TestNetwork
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Height = 451;
+            /*this.Height = 451;
             int i = 1;
             foreach(var item in tasks)
             {
@@ -62,7 +62,11 @@ namespace TestNetwork
                     result.timeFactStart.ToString("hh':'mm':'ss'.'fff"), result.durationConnection, 
                     ((result.errorText!=null) ? result.errorText.ToString() : "Нет ошибок"));
                 i++;
-            }
+            }*/
+            ExcelExport export = new ExcelExport(tasks);
+            int result = export.Export();
+            string exportMessage = (result == 1) ? "Экспорт успешно завершен" : "Экспорт завершен с ошибками, подробности в логе";
+            MessageBox.Show(exportMessage);
         }
 
         private void TestConnectionForm_Load(object sender, EventArgs e)
@@ -75,7 +79,7 @@ namespace TestNetwork
             DateTime now = DateTime.Now;
             TimeSpan diff = endExperiments - now;
 
-            if (diff.Seconds<=0)
+            if (diff.Minutes<=0 & diff.Seconds<=0)
             {
                 label3.Text = "Эксперимент завершен";
                 timer1.Stop();
