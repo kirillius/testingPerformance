@@ -19,9 +19,8 @@ namespace TestNetwork
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*testForm testFormObj = new testForm();
-            testFormObj.MdiParent = this;
-            testFormObj.Show();*/
+            /*ListenHook hook = new ListenHook();
+            hook.ConnectAsync();*/
         }
 
         private void тестConnectionToolStripMenuItem_Click(object sender, EventArgs e)

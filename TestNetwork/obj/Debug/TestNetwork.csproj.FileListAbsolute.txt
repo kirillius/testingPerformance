@@ -25,3 +25,13 @@ C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.csproj.CoreCompileInputs.c
 C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.exe
 C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.pdb
 C:\work\TestNetwork\TestNetwork\obj\Debug\TestNetwork.TestConnectionForm.resources
+C:\work\TestNetwork\TestNetwork\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\work\TestNetwork\TestNetwork\bin\Debug\Microsoft.Owin.dll
+C:\work\TestNetwork\TestNetwork\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\work\TestNetwork\TestNetwork\bin\Debug\Microsoft.Owin.Security.dll
+C:\work\TestNetwork\TestNetwork\bin\Debug\Owin.dll
+C:\work\TestNetwork\TestNetwork\bin\Debug\Microsoft.AspNet.SignalR.Client.pdb
+C:\work\TestNetwork\TestNetwork\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\work\TestNetwork\TestNetwork\bin\Debug\Microsoft.Owin.xml
+C:\work\TestNetwork\TestNetwork\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\work\TestNetwork\TestNetwork\bin\Debug\Microsoft.Owin.Security.xml

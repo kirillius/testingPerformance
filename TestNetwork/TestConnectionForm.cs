@@ -11,6 +11,7 @@ namespace TestNetwork
         List<CustomConnection> tasks;
         int delta;
         DateTime endExperiments;
+        public static List<int> successQueriesList = new List<int>();
 
         public TestConnectionForm()
         {
@@ -30,22 +31,42 @@ namespace TestNetwork
 
             List<TimeSpan> times = objCalculate.GetTimes();
             Console.WriteLine("Количество: {0}", times.Count.ToString());
+            /*int i = 1;
+            this.Height = 661;
+            foreach (var item in times)
+            {
+                //var result = item.GetResult();
+                dataGridView2.Rows.Add(i, item.ToString("hh':'mm':'ss'.'fff"),
+                    "", 0,
+                    "");
+                i++;
+            }*/
+            Dictionary<string, bool> paramsConnection = new Dictionary<string, bool>()
+            {
+                {"pooling", cbPooling.Checked},
+                {"query", rbQuery.Checked }
+            };
             for(int i=0; i<lambda; i++)
             {
                 var itemTime = times.ElementAt(i);
                 if (i == 0)
                 {
                     Task.Run(() => {
-                        CustomConnection connection = new CustomConnection(itemTime);
+                        CustomConnection connection = new CustomConnection(itemTime, paramsConnection);
                         tasks.Add(connection);
+                        connection.startConnection();
                     });
                 }
                 else
                 {
-                    Task.Run(async () => {
-                        await Task.Delay(delta);
-                        CustomConnection connection = new CustomConnection(itemTime);
+                    Task.Run(() => {
+                        CustomConnection connection = new CustomConnection(itemTime, paramsConnection);
                         tasks.Add(connection);
+
+                        if(cbDelta.Checked)
+                            Task.Delay(delta);
+
+                        connection.startConnection();
                     });
                 }
             }
@@ -76,6 +97,10 @@ namespace TestNetwork
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            lCountSuccessQueries.Text = String.Format("Завершено {0} из {1} запросов", successQueriesList.Count, textBox1.Text);
+            if(!lCountSuccessQueries.Visible)
+                lCountSuccessQueries.Visible = true;
+
             DateTime now = DateTime.Now;
             TimeSpan diff = endExperiments - now;
 
@@ -89,6 +114,54 @@ namespace TestNetwork
             
             label3.Text = String.Format("До конца эксперимента осталось: {0}:{1}", diff.Minutes, diff.Seconds);
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AnalysisResults result = new AnalysisResults(tasks);
+            var resultAnalyze = result.analyze();
+
+            this.Height = 661;
+            dataGridView1.Rows.Clear();
+            dataGridView2.Rows.Clear();
+
+            dataGridView1.Rows.Add(resultAnalyze.countSuccessQueries, resultAnalyze.countErrorQueries, 
+                resultAnalyze.countSuccessTimeStart, resultAnalyze.countWrongTimeStart, resultAnalyze.countNotStart, 
+                resultAnalyze.avgDuration, resultAnalyze.avgWaiting);
+
+            int i = 1;
+            var listForGrid = new List<ModelGrid>();
+            foreach (var item in tasks)
+            {
+                var resultRow = item.GetResult();
+                var objList = new ModelGrid()
+                {
+                    nomRow = i,
+                    timePlanningStart = resultRow.timePlanningStart.ToString("hh':'mm':'ss'.'fff"),
+                    timeFactStart = resultRow.timeFactStart.ToString("hh':'mm':'ss'.'fff"),
+                    durationConnection = resultRow.durationConnection,
+                    waitingTime = resultRow.waitingTime,
+                    errorText = (resultRow.errorText != null) ? resultRow.errorText.ToString() : ""
+                };
+                listForGrid.Add(objList);
+                i++;
+            }
+
+            foreach(var item in listForGrid.OrderByDescending(s=>s.durationConnection))
+            {
+                dataGridView2.Rows.Add(item.nomRow, item.timePlanningStart, item.timeFactStart, item.waitingTime, item.durationConnection,
+                    item.errorText);
+            }
+        }
+
+        class ModelGrid
+        {
+            public int nomRow { get; set; }
+            public string timePlanningStart { get; set; }
+            public string timeFactStart { get; set; }
+            public double durationConnection { get; set; }
+            public double waitingTime {get;set;}
+            public string errorText { get; set; }
         }
     }
 }

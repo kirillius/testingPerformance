@@ -12,12 +12,18 @@ namespace TestNetwork
         private ConfigServer developmentConfig;
         private ConfigServer developmentExternalConfig;
         private static ConfigServer currentConfig;
+        private static Dictionary<string, bool> paramsConfig;
 
         public Config()
         {
             productionConfig = new ConfigServer("192.168.0.88", "University", "kirillius", "kirillius1991");
             developmentConfig = new ConfigServer("DESKTOP-FREG6V4\\SQLEXPRESS", "University", "kirillius", "kirillius1991");
             developmentExternalConfig = new ConfigServer("185.158.153.107", "dissertation", "rental", "kirillius1991");
+        }
+
+        public static void SetParamsConfig(Dictionary<string, bool> paramsList)
+        {
+            paramsConfig = paramsList;
         }
 
         public void SetConfig(string env)
@@ -47,7 +53,13 @@ namespace TestNetwork
             connectionString += ";Database=" + currentConfig.databaseName;
             connectionString += ";User Id=" + currentConfig.login;
             connectionString += ";Password=" + currentConfig.password;
-            connectionString += ";pooling=false";
+
+            if (paramsConfig["pooling"])
+                connectionString += ";pooling=true;";
+            else
+                connectionString += ";pooling=false;";
+
+            connectionString += "Connection Timeout=60;";
 
             return connectionString;
         }
@@ -70,7 +82,10 @@ namespace TestNetwork
 
         public static string GetQuery()
         {
-            return "select * from Person"; //"EXEC [dbo].[GetPersons]";
+            if(paramsConfig["query"])
+                return "select * from Person";
+            else
+                return "EXEC [dbo].[GetPersons]";
         }
     }
 
