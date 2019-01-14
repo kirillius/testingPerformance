@@ -14,9 +14,8 @@ namespace TestNetwork
         [STAThread]
         static void Main()
         {
-            //разобраться как ставить флаг в конфиге программы
-            new Config().SetConfig("development");
-
+            new Config().SetConfig("production");
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
